@@ -15,7 +15,7 @@ def climb_image(photo_type, photo_num):
     list_1 = []
     for i in range(int(x)):
         name_1 = os.getcwd()
-        name_2 = os.path.join(name_1, '图片')
+        name_2 = os.path.join(name_1, 'Pictures')
         url = 'https://image.baidu.com/search/flip?tn=baiduimage&ie=utf-8&word=' + name + '&pn=' + str(i * 30)
         res = requests.get(url, headers=headers)
         htlm_1 = res.content.decode()
@@ -29,7 +29,7 @@ def climb_image(photo_type, photo_num):
                 if b_2 not in list_1:
                     num = num + 1
                     img = requests.get(b)
-                    f = open(os.path.join(name_1, '图片', name + str(num) + '.jpg'), 'ab')
+                    f = open(os.path.join(name_1, 'Pictures', name + str(num) + '.jpg'), 'ab')
                     f.write(img.content)
                     f.close()
                     list_1.append(b_2)
